@@ -42,7 +42,7 @@ def preprocess_dataframe(signal_df, background_df):
 
 
     # Getting a Clean Signal
-    #Initial Weight before calculation
+   
     # Print the results
     print("Number of Signal:", len(selected_events))
     print("Number of Events Cut:", len(signal_df)-len(selected_events))
@@ -185,14 +185,10 @@ def model_and_train(X_train, X_val, X_test, y_train, y_val, y_test, weights_trai
     model = tf.keras.models.Sequential(
     [
         tf.keras.layers.Flatten(input_shape=(X_train.shape[1],)),
-        
-        tf.keras.layers.Dense(16, activation='relu'),  # layer 1
-        # Add a second layer of 128 nodes,  and an output layer with a sigmoid function
-        # ADD CONTENT HERE
-        tf.keras.layers.Dense(8, activation='relu'),  # layer 2
-        # tf.keras.layers.Dense(8, activation='relu'),  # layer 2
-        
     
+        tf.keras.layers.Dense(16, activation='relu'),  # layer 1
+        tf.keras.layers.Dense(8, activation='relu'),  # layer 2
+
         tf.keras.layers.Dense(1, activation='sigmoid'),  # output layer
         
     ]
