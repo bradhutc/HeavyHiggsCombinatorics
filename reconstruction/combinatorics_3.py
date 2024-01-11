@@ -4,7 +4,7 @@ import itertools
 import matplotlib.pyplot as plt
 
 
-df = pd.read_csv('processed_sig.csv')
+df = pd.read_csv('processed_sig.csv').drop(['M_H1', 'Pt_H1', 'Eta_H1', 'Phi_H1','M_H2', 'Pt_H2', 'Eta_H2', 'Phi_H2'], axis=1)
 df = df[df['num_bjets'] == 6]
 df = df.reset_index(drop=True)
 
